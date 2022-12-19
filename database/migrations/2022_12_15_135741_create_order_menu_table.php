@@ -14,9 +14,11 @@ class CreateOrderMenuTable extends Migration
     public function up()
     {
         Schema::create('order_menu', function (Blueprint $table) {
-            $table->bigInteger('order_id');
-            $table->char('menu_id');
-            $table->integer('quantity');
+            $table->unsignedBigInteger('order_id')->references('id')->on('orders')->constrained()->onDelete('cascade');
+            $table->char('menu_id',6)->references('id')->on('menus')->constrained()->onDelete('cascade');
+            $table->foreign('order_id')->references('id')->on('orders')->constrained()->onDelete('cascade');
+            $table->foreign('menu_id')->references('id')->on('menus')->constrained()->onDelete('cascade');
+            $table->integer('quantity')->nullable();
         });
     }
 

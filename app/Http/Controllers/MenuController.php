@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Psr\Log\Test\DummyTest;
-use Ramsey\Uuid\Type\Integer;
 
 class MenuController extends Controller
 {
@@ -17,9 +15,6 @@ class MenuController extends Controller
      */
     public function index()
     {
-        // $try = "FD";
-        // $try2 = "001";
-        // dump($try . $try2);
         $menus = Menu::all();
         return view('menus.index', compact('menus'));
     }

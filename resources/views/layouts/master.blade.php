@@ -8,6 +8,7 @@
     <title>@yield('title', 'MeFood') | MeFood</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     @stack('css_after')
 </head>
 
